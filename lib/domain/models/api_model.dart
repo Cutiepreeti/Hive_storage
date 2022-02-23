@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-User userFromJson(String str) => User.fromJson(json.decode(str));
+User userFromJson(String str) => User.fromJson(json.decode(str) as Map<String,dynamic>);
 
 
 class User {
@@ -13,13 +13,13 @@ class User {
     this.support,
   });
 
-  Data? data;
-  Support? support;
-
   factory User.fromJson(Map<String, dynamic> json) => User(
-    data: Data.fromJson(json["data"]),
-    support: Support.fromJson(json["support"]),
+    data: Data.fromJson(json['data'] as Map<String,dynamic>),
+    support: Supported.fromJson(json['support'] as Map<String,dynamic>),
   );
+
+  Data? data;
+  Supported? support;
 
 
 }
@@ -33,34 +33,35 @@ class Data {
     this.avatar,
   });
 
+  factory Data.fromJson(Map<String, dynamic> json) => Data(
+    id: json['id'] as int? ?? 0,
+    email: json['email'] as String? ?? '',
+    firstName: json['first_name'] as String? ?? '',
+    lastName: json['last_name'] as String? ?? '',
+    avatar: json['avatar'] as String? ?? '',
+  );
+
   int? id;
   String? email;
   String? firstName;
   String? lastName;
   String? avatar;
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
-    id: json["id"],
-    email: json["email"],
-    firstName: json["first_name"],
-    lastName: json["last_name"],
-    avatar: json["avatar"],
-  );
-
 }
 
-class Support {
-  Support({
+class Supported {
+  Supported({
     this.url,
     this.text,
   });
 
+  factory Supported.fromJson(Map<String, dynamic> json) => Supported(
+    url: json['url'] as String? ?? '',
+    text: json['text'] as String? ?? '',
+  );
+
   String? url;
   String? text;
 
-  factory Support.fromJson(Map<String, dynamic> json) => Support(
-    url: json["url"],
-    text: json["text"],
-  );
 
 }

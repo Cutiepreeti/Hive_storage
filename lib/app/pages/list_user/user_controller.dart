@@ -1,6 +1,7 @@
-import 'package:api/domain/models/api_listUser.dart';
+import 'package:api/app/app.dart';
+import 'package:api/domain/domain.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'list_user.dart';
 
 class UserController extends GetxController
 {
@@ -11,17 +12,14 @@ class UserController extends GetxController
   List<Datum> listUser=[];
 
 
-  getUsers()
+  Future<List<Datum>>getUsers()
    async{
         var response=await _userPresenter.getUser();
-        if(response!=null)
-          {
-            listUser = response.data!;
-            //print(listUser.first.firstName);
-            update();
-            return listUser;
-          }
-        throw UnimplementedError();
+          listUser = response.data!;
+          //print(listUser.first.firstName);
+          update();
+          return listUser;
+         //throw UnimplementedError();
    }
 
  void saveValue(String key,String value) {
@@ -34,18 +32,18 @@ void getValue(String key) {
 
 }
 
-deleteAllValue() {
+void deleteAllValue() {
    _userPresenter.deleteAllValue();
 }
 
-  getLoginvalue(String key)
+  Future<String?>getLoginvalue(String key)
   async {
     var value =await _userPresenter.getLoginvalue(key);
-    print('$key is: $value');
+    debugPrint('$key is: $value');
     return value;
   }
 
-  deleteLoginvalue(String key)
+  void deleteLoginvalue(String key)
   {
     //print(key);
     _userPresenter.deleteLoginvalue(key);

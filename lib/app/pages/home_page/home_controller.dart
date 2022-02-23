@@ -1,17 +1,11 @@
-
-
-import 'package:api/domain/models/api_listUser.dart';
-
-import '../../../domain/models/api_model.dart';
-import 'home.dart';
+import 'package:api/app/app.dart';
+import 'package:api/domain/domain.dart';
 import 'package:get/get.dart';
-
-
 
 class HomeController extends GetxController
 {
-  late HomePresenter _presenter;
   HomeController(this._presenter);
+  late final HomePresenter _presenter;
 
   // String name = '';
   User? data;
@@ -19,8 +13,8 @@ class HomeController extends GetxController
   Future<void> getData()
   async{
       var response=await _presenter.getData();
-      if(response!=null)
-      {
+      // if(response!=null)
+      // {
         //print('presenter_response:$response');
          data=response;
          //print(data);
@@ -32,20 +26,20 @@ class HomeController extends GetxController
         // print(data.data!.lastName);
         // name = data.data!.firstName!;
         update();
-      }
-      else{
-        print('Error');
-      }
+      // }
+      // else{
+      //   debugPrint('Error');
+      // }
       //update();
       //RouteManagement.goToUsers();
   }
 
 
 
+  @override
   void onInit()
   async{
     await getData();
-    update();
     super.onInit();
   }
 }

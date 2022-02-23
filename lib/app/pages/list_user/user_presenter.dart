@@ -1,13 +1,11 @@
 
 import 'dart:async';
-
 import 'package:api/domain/domain.dart';
-import 'package:api/domain/models/api_listUser.dart';
 
 class UserPresenter
 {
   UserPresenter(this._authUseCase);
-  late AuthUseCase _authUseCase;
+  late final AuthUseCase _authUseCase;
 
    Future<ListUser>getUser()
    async{
@@ -22,18 +20,15 @@ class UserPresenter
   }
 
   Future<String?> getValue(String key)
-  async{
-    return await _authUseCase.getValue(key);
-   }
+  async =>
+      await _authUseCase.getValue(key);
 
-   deleteAllValue() {
+  void deleteAllValue() {
      _authUseCase.deleteAllValue();
   }
 
-  Future<String?> getLoginvalue(String key)async{
-    //print(key);
-    return await _authUseCase.getLoginvalue(key);
-  }
+  Future<String?> getLoginvalue(String key)async =>
+      await _authUseCase.getLoginvalue(key);
 
   void deleteLoginvalue(String key){
     _authUseCase.deleteLoginvalue(key);

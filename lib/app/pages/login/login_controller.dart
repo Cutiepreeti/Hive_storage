@@ -1,18 +1,18 @@
 
 
-import '../../navigators/routes_management.dart';
-import 'login.dart';
+
+import 'package:api/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Controller extends GetxController
 {
+    Controller(this._presenter);
     final Presenter _presenter;
-
 
     var email=TextEditingController();
     var password=TextEditingController();
-    Controller(this._presenter);
+
 
     //User LogIn
     // loginUser()
@@ -64,10 +64,10 @@ class Controller extends GetxController
           value);
     }
 
-   getLoginvalue(String key)
+   Future<String?>getLoginvalue(String key)
   async {
       var value =await _presenter.getLoginvalue(key);
-      print('$key is: $value');
+      debugPrint('$key is: $value');
       return value;
     }
 

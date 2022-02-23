@@ -1,10 +1,8 @@
+import 'package:api/data/data.dart';
+import 'package:api/device/device.dart';
+import 'package:api/domain/domain.dart';
 
 
-import 'package:api/data/repositories/data_repository.dart';
-import 'package:api/device/repositories/device_repository.dart';
-import 'package:api/domain/models/api_model.dart';
-
-import '../models/api_listUser.dart';
 
 class Repository {
   Repository(this._dataRepository, this._deviceRepository);
@@ -73,7 +71,7 @@ class Repository {
     }
   }
 
-   deleteAllValue()
+   void deleteAllValue()
   {
     try{
        _deviceRepository.deleteAllValue();
@@ -84,7 +82,7 @@ class Repository {
     }
   }
 
-  void saveLoginvalue(String key,dynamic value){
+  void saveLoginvalue(String key,String value){
     try{
        _deviceRepository.saveLoginvalue(key, value);
        //print(value);

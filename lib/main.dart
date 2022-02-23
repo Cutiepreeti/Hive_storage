@@ -1,11 +1,10 @@
 
+import 'package:api/app/app.dart';
+import 'package:api/data/data.dart';
+import 'package:api/device/device.dart';
+import 'package:api/domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:api/app/navigators/navigators.dart';
-import 'data/helpers/connect_helper.dart';
-import 'data/repositories/data_repository.dart';
-import 'device/repositories/device_repository.dart';
-import 'domain/repositories/repository.dart';
 
 
 void main() async{
@@ -14,7 +13,7 @@ void main() async{
  runApp( const MyApp());
 }
 
-  initServices() async{
+  Future<void>initServices() async{
     Get.put(
       Repository(
         Get.put(
@@ -47,8 +46,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
+  Widget build(BuildContext context)=>GetMaterialApp(
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
       // ),
@@ -56,5 +54,4 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: AppPages.initial,
     );
-  }
 }

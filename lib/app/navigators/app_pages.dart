@@ -1,8 +1,4 @@
-import 'package:api/app/pages/list_user/list_user.dart';
-import 'package:api/app/pages/login/login.dart';
-import 'package:api/app/pages/login/login_binding.dart';
-import 'package:api/app/pages/home_page/home.dart';
-import 'navigators.dart';
+import 'package:api/app/app.dart';
 import 'package:get/get.dart';
 
 class AppPages

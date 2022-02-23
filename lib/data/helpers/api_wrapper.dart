@@ -1,12 +1,8 @@
 
-
 import 'dart:async';
-import 'dart:convert';
 
-import 'package:api/domain/models/api_model.dart';
+import 'package:api/domain/domain.dart';
 import 'package:http/http.dart'as http;
-import 'package:api/domain/entities/enums.dart';
-import 'package:api/domain/models/response_model.dart';
 
 class ApiWrapper
 {
@@ -35,11 +31,11 @@ class ApiWrapper
         );
      }
   }
-  return ResponseModel(
-      data: '{"message":"No Internet"}',
-      hasError: true,
-      errorCode: 1000
-  );
+  // return ResponseModel(
+  //     data: '{"message":"No Internet"}',
+  //     hasError: true,
+  //     errorCode: 1000
+  // );
 }
 
   ResponseModel returnResponse(http.Response response)
@@ -82,11 +78,11 @@ class ApiGetUser {
           );
         }
     }
-    return ResponseModel(
-        data: '{"message":"No Internet"}',
-        hasError: true,
-        errorCode: 1000
-    );
+    // return ResponseModel(
+    //     data: '{"message":"No Internet"}',
+    //     hasError: true,
+    //     errorCode: 1000
+    // );
   }
 
   ResponseModel returnResponse(http.Response response)

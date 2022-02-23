@@ -1,11 +1,9 @@
-import 'package:api/domain/models/api_model.dart';
-import 'package:api/domain/usecases/auth_usecases.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:api/domain/domain.dart';
 
 class Presenter{
 
   Presenter(this._authUseCase);
-  late AuthUseCase _authUseCase;
+  late final AuthUseCase _authUseCase;
         // loginUser({required String email,required String password})
         // {
         //   print(email);
@@ -18,16 +16,14 @@ class Presenter{
        //    var res=await _authUseCase.getData();
        //    return res;
        // }
-   void saveLoginvalue(String key,dynamic value){
+   void saveLoginvalue(String key,String value){
      //print(key);
      //print(value);
      _authUseCase.saveLoginvalue(key, value);
   }
 
-  Future<String?> getLoginvalue(String key)async{
-          //print(key);
-          return await _authUseCase.getLoginvalue(key);
-  }
+  Future<String?> getLoginvalue(String key)async
+  => await _authUseCase.getLoginvalue(key);
 
   // void deleteLoginvalue(String key){
   //    _authUseCase.deleteLoginvalue(key);

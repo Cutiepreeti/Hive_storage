@@ -1,14 +1,10 @@
-
-
-import 'package:api/domain/models/api_listUser.dart';
-import 'package:api/domain/models/api_model.dart';
-import 'package:api/domain/repositories/repository.dart';
-
+import 'package:api/domain/domain.dart';
+import 'package:flutter/material.dart';
 
 class AuthUseCase
 {
   AuthUseCase(this._repository);
-  late Repository _repository;
+  late final Repository _repository;
 
   Future<User> getData()
   async {
@@ -33,15 +29,15 @@ class AuthUseCase
 
   Future<String?> getValue(String key) async{
     var data= await _repository.getValue(key);
-    print('Name is:$data');
+    debugPrint('Name is:$data');
     return data;
   }
 
-   deleteAllValue() {
+   void deleteAllValue() {
      _repository.deleteAllValue();
   }
 
-   void saveLoginvalue(String key,dynamic value){
+   void saveLoginvalue(String key,String value){
     // print(key);
     // print(value);
       _repository.saveLoginvalue(key, value);

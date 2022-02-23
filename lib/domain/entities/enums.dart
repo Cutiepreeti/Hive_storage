@@ -3,8 +3,8 @@
 enum Request
 {
   get,
-  post,
-  put,
-  patch,
-  delete,
+  // post,
+  // put,
+  // patch,
+  // delete,
 }

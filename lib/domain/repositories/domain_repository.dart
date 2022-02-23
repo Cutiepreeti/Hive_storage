@@ -14,7 +14,7 @@ abstract class DomainRepository
 
   void deleteAllValue();
 
-  void saveLoginvalue(String key,dynamic value);
+  void saveLoginvalue(String key,String value);
 
   Future<String?> getLoginvalue(String key);
 

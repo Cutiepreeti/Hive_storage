@@ -1,5 +1,6 @@
+import 'package:api/app/app.dart';
 import 'package:get/get.dart';
-import 'navigators.dart';
+
 abstract class RouteManagement
 {
   static void goToHome()

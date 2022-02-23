@@ -1,8 +1,6 @@
 
-
-import 'package:api/domain/entities/enums.dart';
-import 'package:api/domain/models/response_model.dart';
-import 'api_wrapper.dart';
+import 'package:api/data/data.dart';
+import 'package:api/domain/domain.dart';
 
 class ConnectHelper
 {

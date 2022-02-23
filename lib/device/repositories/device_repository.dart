@@ -1,10 +1,7 @@
-
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:api/domain/models/response_model.dart';
-import 'package:api/domain/repositories/domain_repository.dart';
+import 'package:api/app/app.dart';
+import 'package:api/domain/domain.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-
-import '../../app/utils/strings/string_constants.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 
 class DeviceRepository extends DomainRepository
@@ -48,13 +45,11 @@ class DeviceRepository extends DomainRepository
      await Hive.openBox<dynamic>(StringConstants.login);
 }
 //Instance of openBox
-   Box _getBox() {
-      return Hive.box<dynamic>(StringConstants.login);
-   }
+   Box _getBox() => Hive.box<dynamic>(StringConstants.login);
 
    //To save login Value
   @override
-   void saveLoginvalue(String key,dynamic value){
+   void saveLoginvalue(String key,String value){
       _getBox().put(key, value);
       // print(key);
      // print(value);
@@ -64,10 +59,10 @@ class DeviceRepository extends DomainRepository
   @override
   Future<String?> getLoginvalue(String key)
   async{
-     var box= _getBox();
-     var value= await box.get(key);
+      var box= _getBox();
+      var val = await box.get(key) as String?;
      //print(value);
-     return value;
+     return val;
   }
 
   @override

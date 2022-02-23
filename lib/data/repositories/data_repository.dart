@@ -1,8 +1,5 @@
-
-
-import 'package:api/data/helpers/connect_helper.dart';
-import 'package:api/domain/models/response_model.dart';
-import 'package:api/domain/repositories/domain_repository.dart';
+import 'package:api/data/data.dart';
+import 'package:api/domain/domain.dart';
 
 class DataRepository extends DomainRepository
 {
