@@ -13,15 +13,13 @@ class ConnectHelper
         Request.get,
         null,
     );
-    //print('apiwrapper_response:$response');
     return response;
   }
 
 
-    final apiGetUser= ApiGetUser();
    Future<ResponseModel>getUsers()
    async{
-      var response=await apiGetUser.apiRequest(
+      var response=await apiwrapper.makeRequest(
         'api/users?page=2',
         Request.get,
         null,

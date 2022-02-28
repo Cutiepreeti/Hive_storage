@@ -1,7 +1,7 @@
 
 
-import 'package:api/app/pages/home_page/home.dart';
-import 'package:api/domain/usecases/auth_usecases.dart';
+import 'package:api/app/app.dart';
+import 'package:api/domain/domain.dart';
 import 'package:get/get.dart';
 
 class HomeBinding extends Bindings{
@@ -20,6 +20,6 @@ class HomeBinding extends Bindings{
                 ),
               ),
             ),
-            fenix:true);
+     );
   }
 }

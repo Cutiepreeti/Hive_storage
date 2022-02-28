@@ -20,7 +20,7 @@ class ListUserBinding extends Bindings
             ),
           ),
         ),
-        fenix:true);
+    );
   }
 
 }

@@ -1,7 +1,7 @@
 
 
-import 'package:api/app/pages/login/login.dart';
-import 'package:api/domain/usecases/auth_usecases.dart';
+import 'package:api/app/app.dart';
+import 'package:api/domain/domain.dart';
 import 'package:get/get.dart';
 
 class LoginBinding extends Bindings{
@@ -19,6 +19,6 @@ class LoginBinding extends Bindings{
                     ),
                 ),
             ),
-        fenix:true);
+        );
   }
 }
