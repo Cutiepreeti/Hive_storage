@@ -16,8 +16,21 @@ class HomeWidget extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-
-                //Text($_control.),
+                Container(
+                  height: 80,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    //border: Border.all(color: Colors.indigo),
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(_control.listUser[_control.index!].avatar.toString()),
+                    ),
+                  ),
+                ),
+                Text('Id:${_control.listUser[_control.index!].id}'),
+                Text('Full Name:${_control.listUser[_control.index!].firstName} ${_control.listUser[_control.index!].lastName}'),
+                Text('Email Id:${_control.listUser[_control.index!].email}')
                 // Text('Id:${_control.data?.data?.id.toString() ?? ''}'),
                 // Text('First Name:${_control.data?.data?.firstName.toString() ?? ''}'),
                 // Text('Last Name:${_control.data?.data?.lastName.toString() ?? ''}'),

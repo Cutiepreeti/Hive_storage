@@ -60,8 +60,7 @@ class UserviewWidget extends StatelessWidget {
                             {
                               _userController.saveValue(keys, '${_userController.listUser[index].firstName!} ${_userController.listUser[index].lastName}');
                               _userController.getValue(keys);
-                              //print('hello');
-                              RouteManagement.goToHome();
+                              RouteManagement.goToHome(index);
                             },
                           ),
                         )

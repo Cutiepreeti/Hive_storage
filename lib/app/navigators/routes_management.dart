@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 abstract class RouteManagement
 {
-  static void goToHome()
+  static void goToHome(int index)
   {
-    Get.toNamed<void>(Routes.home);
+    Get.toNamed<void>(Routes.home, arguments: {'index': index});
   }
 
   static void goToLogin() {
