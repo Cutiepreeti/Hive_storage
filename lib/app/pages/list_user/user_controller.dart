@@ -2,6 +2,7 @@ import 'package:api/app/app.dart';
 import 'package:api/domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class UserController extends GetxController
 {
@@ -12,7 +13,7 @@ class UserController extends GetxController
   List<Datum> listUser=[];
 
 
-  Future<List<Datum>>getUsers()
+  Future<List<Datum>>getUsers(http.Client)()
    async{
         var response=await _userPresenter.getUser();
           listUser = response.data!;
