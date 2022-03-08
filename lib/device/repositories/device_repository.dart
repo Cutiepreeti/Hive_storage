@@ -13,7 +13,7 @@ class DeviceRepository extends DomainRepository
   }
 
   @override
-  Future<ResponseModel> getUsers() {
+  Future<ResponseModel> getUsers(dynamic http) {
     throw UnimplementedError();
   }
 

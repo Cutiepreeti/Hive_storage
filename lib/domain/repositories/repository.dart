@@ -1,6 +1,7 @@
 import 'package:api/data/data.dart';
 import 'package:api/device/device.dart';
 import 'package:api/domain/domain.dart';
+import 'package:http/http.dart' as http;
 
 
 
@@ -25,10 +26,10 @@ class Repository {
     }
   }
 
-  Future<ListUser>getUsers()
+  Future<ListUser>getUsers(dynamic http)
     async{
     try {
-      var response=await _dataRepository.getUsers();
+      var response=await _dataRepository.getUsers(http);
       //print(response.data);
       var listUser = listUserFromJson(response.data);
       //print('data:${listUser.data}');
@@ -37,7 +38,7 @@ class Repository {
       return listUser;
     }
     catch (_) {
-      var response=await _deviceRepository.getUsers();
+      var response=await _deviceRepository.getUsers(http);
       var listUser= listUserFromJson(response.data);
       return listUser;
     }

@@ -17,7 +17,7 @@ class ConnectHelper
   }
 
 
-   Future<ResponseModel>getUsers()
+   Future<ResponseModel>getUsers(dynamic http)
    async{
       var response=await apiwrapper.makeRequest(
         'api/users?page=2',

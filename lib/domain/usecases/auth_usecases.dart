@@ -1,5 +1,6 @@
 import 'package:api/domain/domain.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class AuthUseCase
 {
@@ -13,9 +14,9 @@ class AuthUseCase
      return user;
   }
 
-  Future<ListUser>getUsers()
+  Future<ListUser>getUsers(dynamic http)
   async{
-     var listUser=await _repository.getUsers();
+     var listUser=await _repository.getUsers(http);
      //print('Usecase:${listUser.data!.first.email}');
      return listUser;
   }

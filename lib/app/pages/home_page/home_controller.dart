@@ -11,9 +11,11 @@ class HomeController extends GetxController
   // User? data;
    List<Datum> listUser=[];
 
-   Future<List<Datum>> getUsers()
+
+
+   Future<List<Datum>> getUsers(dynamic http)
    async{
-      var response= await _presenter.getUsers();
+      var response= await _presenter.getUsers(http);
       listUser= response.data!;
       //print(listUser.first.id);
      update();
@@ -57,7 +59,7 @@ class HomeController extends GetxController
   async{
     await saveIndexValue();
     //print('index is: $index');
-    await getUsers();
+   // await getUsers(http);
     super.onInit();
   }
 }

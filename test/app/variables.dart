@@ -3,8 +3,8 @@ import 'package:api/data/data.dart';
 import 'package:api/device/device.dart';
 import 'package:api/domain/domain.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 abstract class Variables {
   static final layerBinding = BindingsBuilder<dynamic>(
@@ -32,6 +32,13 @@ abstract class Variables {
       () {
         Get.lazyPut(
                 () => Controller(Get.put(Presenter(Get.put(AuthUseCase(Get.find()))))));
+      }
+  );
+
+  static final UserBinding = BindingsBuilder<dynamic>(
+          () {
+        Get.lazyPut(
+                () => UserController(Get.put(UserPresenter(Get.put(AuthUseCase(Get.find()))))));
       }
   );
 

@@ -15,9 +15,9 @@ class DataRepository extends DomainRepository
   }
 
    @override
-  Future<ResponseModel>getUsers()
+  Future<ResponseModel>getUsers(dynamic http)
   async{
-     var response=await _connectHelper.getUsers();
+     var response=await _connectHelper.getUsers(http);
      // print('connect:${response.data}');
      return response;
   }

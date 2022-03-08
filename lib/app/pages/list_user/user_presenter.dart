@@ -1,15 +1,16 @@
 
 import 'dart:async';
 import 'package:api/domain/domain.dart';
+import 'package:http/http.dart' as http;
 
 class UserPresenter
 {
   UserPresenter(this._authUseCase);
   late final AuthUseCase _authUseCase;
 
-   Future<ListUser>getUser()
+   Future<ListUser>getUser(dynamic http)
    async{
-      var listUser=await _authUseCase.getUsers();
+      var listUser=await _authUseCase.getUsers(http);
       //print('Presenter:${listUser.data!.first.lastName}');
       return listUser;
    }

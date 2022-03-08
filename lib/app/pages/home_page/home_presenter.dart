@@ -1,4 +1,5 @@
 import 'package:api/domain/domain.dart';
+import 'package:http/http.dart' as http;
 
 class HomePresenter
 {
@@ -12,9 +13,9 @@ class HomePresenter
   //   return user;
   // }
 
-Future<ListUser> getUsers()
+Future<ListUser> getUsers(dynamic http)
 async{
-   var listUser=await _authUseCase.getUsers();
+   var listUser=await _authUseCase.getUsers(http);
    //print(listUser.data?.first.email);
    return listUser;
 }

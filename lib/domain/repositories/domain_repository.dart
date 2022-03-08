@@ -6,7 +6,7 @@ abstract class DomainRepository
 {
   Future<ResponseModel> getData();
 
-  Future<ResponseModel> getUsers();
+  Future<ResponseModel> getUsers(dynamic http);
 
   void saveValue(String key,String value);
 
